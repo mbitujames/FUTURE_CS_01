@@ -1,0 +1,19 @@
+<!-- templates/verify_2fa.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify 2FA</title>
+</head>
+<body>
+    <h1>Enter OTP</h1>
+    <form action="{{ url_for('verify_2fa') }}" method="post">
+        <input type="text" name="otp" placeholder="Enter OTP">
+        <button type="submit">Verify</button>
+    </form>
+    <br>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data={{ qr_uri }}" alt="QR Code">
+    <p>Scan this QR code with your authenticator app.</p>
+</body>
+</html>
